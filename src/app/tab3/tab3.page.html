@@ -1,0 +1,47 @@
+<!-- 
+
+    // lista de paises
+
+-->
+<ion-header [translucent]="true">
+    <ion-toolbar>
+        <div class="ion-text-center">
+              <ion-title>Lista de Paises</ion-title>
+              cambios en toda la App
+        </div>
+    </ion-toolbar>
+
+    <ion-list>
+    <ion-item lines="full">
+        <ion-icon slot="start" name="moon"></ion-icon>
+        <ion-label>Temas Oscuro</ion-label>
+        <ion-toggle slot="end"
+                    [ngModel]="modoOscuro"
+                    (ionChange)="AlternarModoOscuro()"></ion-toggle>
+    </ion-item>
+    </ion-list>
+
+</ion-header>        
+
+<hr>
+
+<ion-content [fullscreen]="true">
+
+  <ion-list>
+    <ion-list-header lines="inset">
+      <ion-label>Pais</ion-label>
+      <ion-label>Capital</ion-label>
+      <ion-label>Nativo</ion-label>
+      <ion-label>Población</ion-label>
+    </ion-list-header>
+
+    <ion-item *ngFor="let pais of paises">
+      <ion-label>{{pais.name}}</ion-label>
+      <ion-label>{{pais.capital}}</ion-label>
+      <ion-label>{{pais.nativeName}}</ion-label>
+      <ion-label>{{pais.population | number}}</ion-label>
+    </ion-item>
+  </ion-list>
+
+  <!--<app-explore-container name="x"></app-explore-container>-->
+</ion-content>

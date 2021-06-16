@@ -1,0 +1,35 @@
+<!-- 
+
+    // lista de paises
+
+-->
+<ion-header [translucent]="true">
+    <ion-toolbar>
+        <div class="ion-text-center">
+            <ion-title>     Lista de Paises</ion-title>
+                            App sin cambios de estilo
+                </div>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+    <ion-list>
+        <ion-list-header lines="inset">
+            <ion-label>Pais</ion-label>
+            <ion-label>Capital</ion-label>
+            <ion-label>Nativo</ion-label>
+            <ion-label>Población</ion-label>
+        </ion-list-header>
+
+        <ion-item *ngFor="let pais of paises">
+            <ion-label>{{pais.name}}</ion-label>
+            <ion-label>{{pais.capital}}</ion-label>
+            <ion-label>{{pais.nativeName}}</ion-label>
+            <ion-label>{{pais.population | number}}</ion-label>
+        </ion-item>
+    </ion-list>
+
+    <!--<app-explore-container name="x"></app-explore-container>-->
+</ion-content>
+
